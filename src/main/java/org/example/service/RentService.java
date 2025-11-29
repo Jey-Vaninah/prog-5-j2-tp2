@@ -7,6 +7,7 @@ import org.example.exception.NotFoundException;
 
 @Slf4j
 public class RentService {
+
     private final RentRepository repository;
 
     public RentService(RentRepository repository) {
@@ -21,7 +22,8 @@ public class RentService {
                 throw new NotFoundException("Rent " + id + " not found.");
             }
             return rent;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             log.error("Error in getRent({}): {}", id, e.getMessage(), e);
             throw e;
         }
@@ -31,7 +33,8 @@ public class RentService {
         try {
             repository.save(rent);
             log.info("Rent added: {}", rent.getId());
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             log.error("Error in addRent: {}", e.getMessage(), e);
             throw e;
         }
@@ -46,7 +49,8 @@ public class RentService {
             }
             repository.delete(id);
             log.info("Rent deleted: {}", id);
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             log.error("Error in deleteRent({}): {}", id, e.getMessage(), e);
             throw e;
         }
