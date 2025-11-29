@@ -23,8 +23,7 @@ public class RentController {
 
         if (rent != null) {
             log.info("Result: {}", rent);
-        }
-        else {
+        } else {
             log.warn("Error: Rent {} not found.", id);
         }
     }
@@ -35,8 +34,7 @@ public class RentController {
         if (rent != null) {
             service.deleteRent(id);
             log.info("Rent deleted: {}", id);
-        }
-        else {
+        } else {
             log.warn("Error: Rent {} not found.", id);
         }
     }
