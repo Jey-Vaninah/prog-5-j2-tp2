@@ -17,10 +17,12 @@ public class RentService {
     public Rent getRent(String id) {
         try {
             Rent rent = repository.findById(id);
+
             if (rent == null) {
                 log.warn("Rent not found: {}", id);
                 throw new NotFoundException("Rent " + id + " not found.");
             }
+
             return rent;
         }
         catch (Exception e) {
@@ -43,10 +45,12 @@ public class RentService {
     public void deleteRent(String id) {
         try {
             Rent rent = repository.findById(id);
+
             if (rent == null) {
                 log.warn("Rent {} not found for deletion", id);
                 throw new NotFoundException("Rent " + id + " not found.");
             }
+
             repository.delete(id);
             log.info("Rent deleted: {}", id);
         }
