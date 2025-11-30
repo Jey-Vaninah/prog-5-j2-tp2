@@ -10,6 +10,6 @@ public class RentalItem {
     private final double quantity;
 
     public double calculateTotalDue(LocalDate startDate, LocalDate endDate) {
-        return  rental.calculateTotalDue(startDate, endDate, quantity);
+        return rental.calculateTotalDue(startDate, endDate, quantity);
     }
 }

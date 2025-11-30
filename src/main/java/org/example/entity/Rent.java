@@ -15,7 +15,7 @@ public class Rent {
 
     public double getTotalRentalPrice() {
         return rentalItems.stream()
-             .mapToDouble(item -> item.calculateTotalDue(startDate, endDate))
-             .sum();
+                .mapToDouble(item -> item.calculateTotalDue(startDate, endDate))
+                .sum();
     }
 }

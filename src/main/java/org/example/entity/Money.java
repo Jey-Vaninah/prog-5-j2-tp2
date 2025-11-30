@@ -1,7 +1,5 @@
 package org.example.entity;
 
-import lombok.AllArgsConstructor;
-
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
