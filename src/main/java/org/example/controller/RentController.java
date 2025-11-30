@@ -5,36 +5,47 @@ import org.example.entity.Rent;
 import org.example.service.RentService;
 
 @Slf4j
-public class RentController {
+public class RentController
+{
 
     private final RentService service;
 
-    public RentController(RentService service) {
+    public RentController(RentService service)
+    {
         this.service = service;
     }
 
-    public void addRent(Rent rent) {
+    public void addRent(Rent rent)
+    {
         service.addRent(rent);
         log.info("Rent added: {}", rent.getId());
     }
 
-    public void getRent(String id) {
+    public void getRent(String id)
+    {
         Rent rent = service.getRent(id);
 
-        if (rent != null) {
+        if (rent != null)
+        {
             log.info("Result: {}", rent);
-        } else {
+        }
+        else
+        {
             log.warn("Error: Rent {} not found.", id);
         }
     }
 
-    public void deleteRent(String id) {
+    public void deleteRent(String id)
+    {
         Rent rent = service.getRent(id);
 
-        if (rent != null) {
+        if (rent != null)
+        {
             service.deleteRent(id);
             log.info("Rent deleted: {}", id);
-        } else {
+        }
+        else
+        {
             log.warn("Error: Rent {} not found.", id);
         }
     }
