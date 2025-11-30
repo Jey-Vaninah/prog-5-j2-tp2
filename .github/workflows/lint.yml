@@ -20,5 +20,10 @@ jobs:
           distribution: temurin
           java-version: 21
 
+      - name: Run Google Java Format (Linux)
+        run: |
+            chmod +x format.sh
+            ./format.sh
+
       - name: Run Checkstyle
         run: mvn -B validate
